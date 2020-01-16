@@ -51,18 +51,24 @@ graphique ci-dessous, il trace efficacement des lignes entre des points minorita
 échantillons le long de ces lignes. Cela nous permet d’équilibrer notre ensemble de données sans trop de sur adaptation, car
 nous créons de nouveaux exemples synthétiques plutôt que d’utiliser des doublons. Cela n’empêche toutefois pas tout le risque 
 de sur-ajustement, car ils sont toujours créés à partir de points de données existants.
+
 ![alt text](https://github.com/afakhouri/PLP_project/blob/master/sur_echantillonnage.png)
+
 # 3.2 Temps de calcul:
 # 3.2.1 Pré-traitement:
-Nous remarquons que l’accroissement du temps de calcul de l’étape de Prétraitement est logarithmique par rapport au volume de data à traiter. Les temps
-de calculs en fonction du nombre de cœurs ou du nombre d’exécuteurs est en faveur
+Nous remarquons que l’accroissement du temps de calcul de l’étape de Prétraitement est logarithmique par rapport au volume de 
+data à traiter. Les temps de calculs en fonction du nombre de cœurs ou du nombre d’exécuteurs est en faveur
 de l’architecture distribuée.
+
 ![alt text](https://github.com/afakhouri/PLP_project/blob/master/preprocessing.png)
+
 # 3.2.2 Apprentissage:
 Le temps de calcul dans la phase d’apprentissage de Spark est énorme ce qui laisse penser que Spark n’est pas le meilleur 
 choix pour la phase d’apprentissage sauf dans le cas où vous ne disposez pas de suffisamment de RAM pour allouer de
 la mémoire aux données. Sklearn fournit de très hautes performances.
+
 ![alt text](https://github.com/afakhouri/PLP_project/blob/master/training.png)
+
 # 4. Conclusion:
 A travers ce projet de comparaison de performances entre architecture distribuée type Map-Reduce (par exemple sur MLlib de 
 PySpark) et l’architecture standard (Par exemple sur Sklearn sur Python), on comprend que l’une peut être
